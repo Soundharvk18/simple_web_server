@@ -1,6 +1,6 @@
 # EX01 Developing a Simple Webserver
 
-# Date:18/10/2024
+# Date:07/10/2024
 # AIM:
 To develop a simple webserver to serve html pages and display the configuration details of laptop.
 
@@ -127,12 +127,28 @@ print("This is my webserver")
 server_address =('',8000)
 httpd = HTTPServer(server_address,MyServer)
 httpd.serve_forever()
+'''
+urls.py
+
+from tempfile import template
+from django.contrib import admin
+from django.urls import path
+from app.views import MyServer
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    # path('new/',views.trial),
+    # path('page/',views.slot),
+    # path('home/',template.slot),
+    path('server/',MyServer.as_view())
+]
 ```
 # OUTPUT:
 
 ![Screenshot 2024-12-05 184439](https://github.com/user-attachments/assets/ad0601b7-b82f-4ccc-bed7-bb5163408f19)
 
-![Screenshot 2024-12-05 190956](https://github.com/user-attachments/assets/09be9c87-c7a7-4ccf-b963-399f013e38c2)
+![Screenshot 2024-12-07 112247](https://github.com/user-attachments/assets/6a5ab00b-ddb2-426b-8b11-2df8c6060598)
 
 
 # RESULT:
